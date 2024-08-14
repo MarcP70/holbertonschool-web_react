@@ -14,12 +14,14 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
         type: 'asset/resource',
+        use: [
+          {
+            loader: 'image-webpack-loader',
+          },
+        ],
       },
     ],
-  },
-  performance: {
-    hints: false,
   },
 };
