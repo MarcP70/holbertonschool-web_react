@@ -7,6 +7,7 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
   },
+
   module: {
     rules: [
       {
@@ -14,13 +15,16 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'asset/resource',
+        test: /\.(gif|png|jpg|jpeg|svg)$/i,
         use: [
+          "file-loader",
           {
             loader: 'image-webpack-loader',
-          },
-        ],
+            options: {
+              bypassOnDebug: true,
+            },
+          }
+        ]
       },
     ],
   },
