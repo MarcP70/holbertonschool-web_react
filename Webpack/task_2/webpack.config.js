@@ -4,19 +4,23 @@ module.exports = {
   mode: 'production',
   entry: './js/dashboard_main.js',
   output: {
-    filename: 'bundle.js',
     path: path.resolve(__dirname, 'public'),
+    filename: 'bundle.js',
   },
   module: {
     rules: [
       {
-        test: /\.(css)$/,
+        test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
         type: 'asset/resource',
-        use: ['file-loader', 'image-webpack-loader'],
+        use: [
+          {
+            loader: 'image-webpack-loader',
+          },
+        ],
       },
     ],
   },

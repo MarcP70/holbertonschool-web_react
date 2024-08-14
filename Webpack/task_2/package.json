@@ -1,5 +1,5 @@
 {
-  "name": "task_1",
+  "name": "task_2",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "css-loader": "^7.1.2",
+    "css-loader": "^7.1.1",
     "file-loader": "^6.2.0",
     "image-webpack-loader": "^8.1.0",
     "style-loader": "^4.0.0",
@@ -20,6 +20,6 @@
   },
   "dependencies": {
     "jquery": "^3.7.1",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.21"
   }
 }
