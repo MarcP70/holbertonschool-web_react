@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/dashboard/static/css/main.dc748212.chunk.css",
-    "main.js": "/dashboard/static/js/main.f90ef718.chunk.js",
-    "main.js.map": "/dashboard/static/js/main.f90ef718.chunk.js.map",
-    "runtime-main.js": "/dashboard/static/js/runtime-main.1a1009a5.js",
-    "runtime-main.js.map": "/dashboard/static/js/runtime-main.1a1009a5.js.map",
-    "static/js/2.e99d73e4.chunk.js": "/dashboard/static/js/2.e99d73e4.chunk.js",
-    "static/js/2.e99d73e4.chunk.js.map": "/dashboard/static/js/2.e99d73e4.chunk.js.map",
-    "index.html": "/dashboard/index.html",
-    "static/css/main.dc748212.chunk.css.map": "/dashboard/static/css/main.dc748212.chunk.css.map",
-    "static/js/2.e99d73e4.chunk.js.LICENSE.txt": "/dashboard/static/js/2.e99d73e4.chunk.js.LICENSE.txt",
-    "static/media/Holberton_Logo.24bab5d6.jpg": "/dashboard/static/media/Holberton_Logo.24bab5d6.jpg"
+    "main.css": "/holbertonschool-web_react/static/css/main.dc748212.chunk.css",
+    "main.js": "/holbertonschool-web_react/static/js/main.f90ef718.chunk.js",
+    "main.js.map": "/holbertonschool-web_react/static/js/main.f90ef718.chunk.js.map",
+    "runtime-main.js": "/holbertonschool-web_react/static/js/runtime-main.f720477d.js",
+    "runtime-main.js.map": "/holbertonschool-web_react/static/js/runtime-main.f720477d.js.map",
+    "static/js/2.e99d73e4.chunk.js": "/holbertonschool-web_react/static/js/2.e99d73e4.chunk.js",
+    "static/js/2.e99d73e4.chunk.js.map": "/holbertonschool-web_react/static/js/2.e99d73e4.chunk.js.map",
+    "index.html": "/holbertonschool-web_react/index.html",
+    "static/css/main.dc748212.chunk.css.map": "/holbertonschool-web_react/static/css/main.dc748212.chunk.css.map",
+    "static/js/2.e99d73e4.chunk.js.LICENSE.txt": "/holbertonschool-web_react/static/js/2.e99d73e4.chunk.js.LICENSE.txt",
+    "static/media/Holberton_Logo.24bab5d6.jpg": "/holbertonschool-web_react/static/media/Holberton_Logo.24bab5d6.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.1a1009a5.js",
+    "static/js/runtime-main.f720477d.js",
     "static/js/2.e99d73e4.chunk.js",
     "static/css/main.dc748212.chunk.css",
     "static/js/main.f90ef718.chunk.js"
