@@ -1,9 +1,10 @@
+import React from 'react'
 import logo from '../assets/holberton-logo.jpg'
-import './App.css';
+import './App.css'
 import { getFullYear, getFooterCopy } from '../utils/utils'
 
 function App() {
-  const isIndex = true;
+  const isIndex = true
   return (
     <div className="App">
       <header className="App-header">
@@ -20,7 +21,6 @@ function App() {
           <input type="password" id="password" name="password" />
           <button type="submit">OK</button>
         </form>
-
       </div>
       <footer className="App-footer">
         <p>
@@ -31,4 +31,4 @@ function App() {
   )
 }
 
-export default App;
+export default App

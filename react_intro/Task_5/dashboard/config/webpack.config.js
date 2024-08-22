@@ -4,9 +4,17 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, '../dist')
+    path: path.resolve(__dirname, '../dist'),
+    filename: 'bundle.js'
   },
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, '../dist')
+    },
+    hot: true,
+    port: 8564
+  },
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -15,27 +23,21 @@ module.exports = {
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
-        use: ['file-loader', 'image-webpack-loader']
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true
+            }
+          }
+        ]
       },
       {
-        test: /\.(?:js|mjs|cjs)$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+        use: ['babel-loader']
       }
     ]
-  },
-  devtool: 'inline-source-map',
-  devServer: {
-    static: {
-      directory: path.join(__dirname, '../dist')
-    },
-    open: true,
-    hot: true,
-    port: 8564
   }
 }
