@@ -43,7 +43,7 @@ function Notifications({ displayDrawer }) {
   )
 }
 
-Notifications.prototype = {
+Notifications.propType = {
   displayDrawer: PropTypes.bool,
 }
 
