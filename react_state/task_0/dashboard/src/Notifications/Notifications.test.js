@@ -164,10 +164,10 @@ describe('Notifications Component', () => {
   it('calls handleDisplayDrawer when the menu item is clicked', () => {
     const handleDisplayDrawer = jest.fn();
     const wrapper = shallow(<Notifications handleDisplayDrawer={handleDisplayDrawer} />);
-    const menuItem = wrapper.find('#menu-item');;
+    wrapper.setProps({ displayDrawer: false });
+    const menuItem = wrapper.find('#menu-item');
     menuItem.simulate('click');
     expect(handleDisplayDrawer).toHaveBeenCalledTimes(1);
-    handleDisplayDrawer.mockClear();
   });
 
 
@@ -183,8 +183,6 @@ describe('Notifications Component', () => {
     const closeButton = wrapper.find('#close-btn');
     closeButton.simulate('click');
     expect(handleHideDrawer).toHaveBeenCalledTimes(1);
-    handleHideDrawer.mockClear();
-    jest.restoreAllMocks();
   });
 
 });
