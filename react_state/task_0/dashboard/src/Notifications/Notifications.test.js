@@ -162,39 +162,29 @@ describe('Notifications Component', () => {
 
   // Test clicking on "Your notifications" calls handleDisplayDrawer
   it('calls handleDisplayDrawer when the menu item is clicked', () => {
-    const handleDisplayDrawerSpy = jest.fn();
-    const wrapper = shallow(
-      <Notifications
-        displayDrawer={false}
-        handleDisplayDrawer={handleDisplayDrawerSpy}
-      />
-    );
-    const instance = wrapper.instance();
-    instance.setState({ displayDrawer: false });
-    wrapper.update();
-    const menuItem = wrapper.find('#menu-item');
-    expect(menuItem.exists()).toBe(true);
+    const handleDisplayDrawer = jest.fn();
+    const wrapper = shallow(<Notifications handleDisplayDrawer={handleDisplayDrawer} />);
+    const menuItem = wrapper.find('#menu-item');;
     menuItem.simulate('click');
-    expect(handleDisplayDrawerSpy).toHaveBeenCalled();
+    expect(handleDisplayDrawer).toHaveBeenCalledTimes(1);
+    handleDisplayDrawer.mockClear();
   });
 
 
   // Test clicking the close button calls handleHideDrawer
   it('calls handleHideDrawer when the close button is clicked', () => {
-    const handleHideDrawerSpy = jest.fn();
+    const handleHideDrawer = jest.fn();
     const wrapper = shallow(
       <Notifications
         displayDrawer={true}
-        handleHideDrawer={handleHideDrawerSpy}
+        handleHideDrawer={handleHideDrawer}
       />
     );
-    const instance = wrapper.instance();
-    instance.setState({ displayDrawer: true });
-    wrapper.update();
     const closeButton = wrapper.find('#close-btn');
-    expect(closeButton.exists()).toBe(true);
     closeButton.simulate('click');
-    expect(handleHideDrawerSpy).toHaveBeenCalled();
+    expect(handleHideDrawer).toHaveBeenCalledTimes(1);
+    handleHideDrawer.mockClear();
+    jest.restoreAllMocks();
   });
 
 });
