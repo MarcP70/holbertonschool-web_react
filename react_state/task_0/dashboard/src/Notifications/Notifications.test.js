@@ -169,7 +169,11 @@ describe('Notifications Component', () => {
         handleDisplayDrawer={handleDisplayDrawerSpy}
       />
     );
+    const instance = wrapper.instance();
+    instance.setState({ displayDrawer: false });
+    wrapper.update();
     const menuItem = wrapper.find('#menu-item');
+    expect(menuItem.exists()).toBe(true);
     menuItem.simulate('click');
     expect(handleDisplayDrawerSpy).toHaveBeenCalled();
   });
@@ -184,7 +188,11 @@ describe('Notifications Component', () => {
         handleHideDrawer={handleHideDrawerSpy}
       />
     );
+    const instance = wrapper.instance();
+    instance.setState({ displayDrawer: true });
+    wrapper.update();
     const closeButton = wrapper.find('#close-btn');
+    expect(closeButton.exists()).toBe(true);
     closeButton.simulate('click');
     expect(handleHideDrawerSpy).toHaveBeenCalled();
   });
