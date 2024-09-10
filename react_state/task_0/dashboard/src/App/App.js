@@ -71,11 +71,13 @@ class App extends React.Component {
     const LoginWithLogging = WithLogging(Login)
     const LoginWithNotifications = WithLogging(Notifications)
 
+    const {displayDrawer} = this.state;
+
     return (
       <>
         <LoginWithNotifications
           listNotifications={listNotifications}
-          displayDrawer={this.state.displayDrawer}
+          displayDrawer={displayDrawer}
           handleDisplayDrawer={this.handleDisplayDrawer}
           handleHideDrawer={this.handleHideDrawer}
         />
