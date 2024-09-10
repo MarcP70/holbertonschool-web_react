@@ -70,7 +70,7 @@ class Notifications extends React.Component {
                     type={notification.type}
                     value={notification.value}
                     html={notification.html}
-                    markAsRead={this.markAsRead}
+                    markAsRead={() => this.markAsRead(notification.id)}
                     id={notification.id}
                   />
                 ))}
