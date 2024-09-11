@@ -93,25 +93,22 @@ describe('<App />', () => {
   // Test the default state of displayDrawer
   it('should have displayDrawer default to false', () => {
     const wrapper = shallow(<App />);
-    const instance = wrapper.instance();
-    expect(instance.state.displayDrawer).toBe(false);
+    expect(wrapper.state('displayDrawer')).toBe(false);
   });
 
   // Test that calling handleDisplayDrawer sets displayDrawer to true
   it('should set displayDrawer to true when handleDisplayDrawer is called', () => {
     const wrapper = shallow(<App />);
-    const instance = wrapper.instance();
-    instance.handleDisplayDrawer();
-    expect(instance.state.displayDrawer).toBe(true);
+    wrapper.instance().handleDisplayDrawer();
+    expect(wrapper.state('displayDrawer')).toBe(true);
   });
 
   // Test that calling handleHideDrawer sets displayDrawer to false
   it('should set displayDrawer to false when handleHideDrawer is called', () => {
     const wrapper = shallow(<App />);
-    const instance = wrapper.instance();
-    instance.handleDisplayDrawer();
-    instance.handleHideDrawer();
-    expect(instance.state.displayDrawer).toBe(false);
+    wrapper.setState({displayDrawer: true});
+    wrapper.instance().handleHideDrawer();
+    expect(wrapper.state('displayDrawer')).toBe(false);
   });
 
 });
