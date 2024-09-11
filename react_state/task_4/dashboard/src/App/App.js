@@ -80,7 +80,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { displayDrawer, user } = this.state;
+    const { displayDrawer, user, listNotifications } = this.state;
     const isIndex = true
     const listCourses = [
       { id: 1, name: 'ES6', credit: 60 },
@@ -97,7 +97,7 @@ class App extends React.Component {
       <AppContext.Provider value={contextValue}>
         <>
           <LoginWithNotifications
-            listNotifications={this.state.listNotifications}
+            listNotifications={listNotifications}
             displayDrawer={displayDrawer}
             handleDisplayDrawer={this.handleDisplayDrawer}
             handleHideDrawer={this.handleHideDrawer}
@@ -116,7 +116,9 @@ class App extends React.Component {
             )}
             <BodySection title="News from the School">
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, iure nisi, at suscipit ratione quos nulla vitae distinctio, quisquam soluta adipisci fuga impedit a doloremque. Aspernatur dolorum possimus quo numquam.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, iure nisi,
+                at suscipit ratione quos nulla vitae distinctio, quisquam soluta adipisci fuga
+                impedit a doloremque. Aspernatur dolorum possimus quo numquam.
               </p>
             </BodySection>
             <div className={css(styles.footer)}>
