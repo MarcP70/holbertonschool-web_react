@@ -30,9 +30,6 @@ const styles = StyleSheet.create({
 
 // Create class names from styles
 const bodyClassName = css(styles.body);
-const buttonClassName = css(styles.button);
-const inputClassName = css(styles.input);
-const labelClassName = css(styles.label);
 
 describe('Login Component', () => {
   beforeAll(() => {
@@ -44,37 +41,44 @@ describe('Login Component', () => {
   });
 
   it('should render without crashing', () => {
-    shallow(<Login />);
+    const mockLogIn = jest.fn();  // Create a mock function for logIn
+    const wrapper = shallow(<Login logIn={mockLogIn} />);  // Pass the mock logIn function as a prop
+    expect(wrapper.exists()).toBe(true);
   });
 
   it('should render 3 input tags and 2 label tags', () => {
-    const wrapper = shallow(<Login />);
+    const mockLogIn = jest.fn();  // Mock logIn function
+    const wrapper = shallow(<Login logIn={mockLogIn} />);
     expect(wrapper.find('input').length).toBe(3);
     expect(wrapper.find('label').length).toBe(2);
   });
 
   describe('Style Tests', () => {
     it('should apply the correct style to the body div', () => {
-      const wrapper = shallow(<Login />);
+      const mockLogIn = jest.fn();  // Mock logIn function
+      const wrapper = shallow(<Login logIn={mockLogIn} />);  // Pass mockLogIn
       expect(wrapper.find('div').first().hasClass(bodyClassName)).toBe(true);
     });
 
     it('should apply the correct styles to input tags', () => {
-      const wrapper = shallow(<Login />);
+      const mockLogIn = jest.fn();  // Create a mock function for logIn
+      const wrapper = shallow(<Login logIn={mockLogIn} />);  // Pass the mock logIn function as a prop
       const inputs = wrapper.find('input');
       expect(inputs.at(0).prop('className')).toContain('input');
       expect(inputs.at(1).prop('className')).toContain('input');
     });
 
     it('should apply the correct style to label tags', () => {
-      const wrapper = shallow(<Login />);
+      const mockLogIn = jest.fn();  // Mock logIn function
+      const wrapper = shallow(<Login logIn={mockLogIn} />);  // Pass mockLogIn as prop
       const labels = wrapper.find('label');
       expect(labels.at(0).prop('className')).toContain('label');
       expect(labels.at(1).prop('className')).toContain('label');
     });
 
     it('should apply the correct style to the button', () => {
-      const wrapper = shallow(<Login />);
+      const mockLogIn = jest.fn();  // Mock logIn function
+      const wrapper = shallow(<Login logIn={mockLogIn} />);  // Pass mockLogIn as prop
       const button = wrapper.find('input[type="submit"]');
       expect(button.prop('className')).toContain('button');
     });
@@ -82,13 +86,15 @@ describe('Login Component', () => {
 
   describe('Button Enable/Disable Tests', () => {
     it('should disable the submit button by default', () => {
-      const wrapper = shallow(<Login />);
+      const mockLogIn = jest.fn();  // Mock logIn function
+      const wrapper = shallow(<Login logIn={mockLogIn} />);  // Pass mockLogIn as prop
       const button = wrapper.find('input[type="submit"]');
       expect(button.prop('disabled')).toBe(true);
     });
 
     it('should enable the submit button when email and password are both non-empty', () => {
-      const wrapper = shallow(<Login />);
+      const mockLogIn = jest.fn();  // Mock logIn function
+      const wrapper = shallow(<Login logIn={mockLogIn} />);  // Pass mockLogIn as prop
       wrapper.find('input[type="email"]').simulate('change', { target: { value: 'test@example.com' } });
       wrapper.find('input[type="password"]').simulate('change', { target: { value: 'password123' } });
 
