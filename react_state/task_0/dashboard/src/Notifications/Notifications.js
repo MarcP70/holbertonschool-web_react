@@ -5,6 +5,13 @@ import NotificationItem from './NotificationItem';
 import NotificationItemShape from './NotificationItemShape';
 
 class Notifications extends React.Component {
+  constructor(props) {
+    super(props);
+    // Bind explicite des méthodes
+    this.markAsRead = this.markAsRead.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+  }
+
   static propTypes = {
     displayDrawer: PropTypes.bool,
     listNotifications: PropTypes.arrayOf(NotificationItemShape),
@@ -19,11 +26,11 @@ class Notifications extends React.Component {
     handleHideDrawer: () => {},
   }
 
-  markAsRead = id => {
+  markAsRead(id) {
     console.log(`Notification ${id} has been marked as read`);
   }
 
-  handleClose = () => {
+  handleClose() {
     console.log('Close button has been clicked');
     this.props.handleHideDrawer();
   }
@@ -38,6 +45,8 @@ class Notifications extends React.Component {
 
   render() {
     const { displayDrawer, listNotifications, handleDisplayDrawer } = this.props;
+    const { markAsRead, handleClose } = this;
+
     return (
       <>
         {!displayDrawer && (
@@ -52,7 +61,7 @@ class Notifications extends React.Component {
               id="close-btn"
               className={css(styles.closeBtn)}
               aria-label="Close"
-              onClick={this.handleClose}
+              onClick={handleClose}
             >
               x
             </button>
@@ -70,7 +79,7 @@ class Notifications extends React.Component {
                     type={notification.type}
                     value={notification.value}
                     html={notification.html}
-                    markAsRead={() => this.markAsRead(notification.id)}
+                    markAsRead={() => markAsRead(notification.id)}
                     id={notification.id}
                   />
                 ))}
