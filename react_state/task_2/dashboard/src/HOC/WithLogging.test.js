@@ -40,9 +40,10 @@ describe('WithLogging HOC', () => {
   // Test 2: Ensure console.log is called with the component name for the Login component
   it('logs "Component Login is mounted" and "Component Login is going to unmount" when wrapping the Login component', () => {
     const WrappedLogin = WithLogging(Login)
+    const mockLogIn = jest.fn();
 
     // Render the component using TestRenderer to avoid needing a real DOM
-    const testInstance = TestRenderer.create(<WrappedLogin />)
+    const testInstance = TestRenderer.create(<WrappedLogin logIn={mockLogIn} />)
     expect(consoleSpy).toHaveBeenCalledWith('Component Login is mounted')
 
     // Unmount the component
