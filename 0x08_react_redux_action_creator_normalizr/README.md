@@ -666,6 +666,7 @@ mandatory
 Set up Redux and Redux Thunk
 
 Install `redux` and `redux-thunk` in your project
+`npm install redux redux-thunk`
 
 Simulate an API
 
@@ -702,6 +703,7 @@ Tips:
 
 *   You can use `node-fetch` to query an API
 *   You can install `redux-mock-store` and `fetch-mock` to simular the API and simulate the store
+      `npm install --save-dev redux-mock-store fetch-mock`
 *   With `fetch-mock`, you can use `getOnce` and `get` to simulate success and failures
 
 Requirements:
