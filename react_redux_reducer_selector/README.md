@@ -504,7 +504,7 @@ Create a test suite for your selectors in a file named `src/selectors/notificati
 **Tips:**
 
 *   To write your tests, you can have a state variable using the reducer you created. And pass the state to the selector functions
-*   You can also look into using Reselect for your own projects when you have advanced needs for filtering, reducing and merging data from the state
+*   You can also look into using Reselect for your own projects when you have advanced needs for filtering, reducing and merging data from the state (npm install reselect)
 
 **Requirements:**
 
